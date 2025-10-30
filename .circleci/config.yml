@@ -282,7 +282,7 @@ workflows:
           name: test-linux-<< matrix.python-version >> | << matrix.dimod-preprocessing-version >>
           matrix:
             parameters:
-              python-version: &python-versions ["3.10", "3.11", "3.12", "3.13"]
+              python-version: &python-versions ["3.10", "3.11", "3.12", "3.13", "3.14"]
               dimod-preprocessing-version:
                 - "dimod==0.12.5 dwave-preprocessing~=0.5.0"
                 - "dimod~=0.12.0 dwave-preprocessing~=0.6.0"
@@ -290,8 +290,9 @@ workflows:
               # dimod < 0.12.13 not supported on py312+
               - python-version: "3.12"
                 dimod-preprocessing-version: "dimod==0.12.5 dwave-preprocessing~=0.5.0"
-              # dimod < 0.12.17 not supported on py313
               - python-version: "3.13"
+                dimod-preprocessing-version: "dimod==0.12.5 dwave-preprocessing~=0.5.0"
+              - python-version: "3.14"
                 dimod-preprocessing-version: "dimod==0.12.5 dwave-preprocessing~=0.5.0"
           context: &ctx-build "ocean-build"
 
@@ -304,7 +305,7 @@ workflows:
               system-client-version:
                 - "dwave-system~=1.0"
                 - "dwave-system~=1.0 dwave-cloud-client~=0.13.0"
-                - "dwave-system~=1.0 dwave-cloud-client~=0.14.0rc --pre"
+                - "dwave-system~=1.0 dwave-cloud-client~=0.14.0"
           context: *ctx-build
 
       - test-macos:

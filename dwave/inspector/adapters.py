@@ -43,9 +43,6 @@ logger = logging.getLogger(__name__)
 
 SUPPORTED_SOLVER_TOPOLOGY_TYPES = {'chimera', 'pegasus', 'zephyr'}
 
-# only one BQM class since dimod 0.10 (with a few aliases/subclasses for default dtype)
-BQM_CLASSES = (dimod.BinaryQuadraticModel, )
-
 
 def enable_data_capture():
     """Enable logging of submitted problems/answers, embedding parameters,
@@ -788,7 +785,7 @@ def from_objects(*args, **kwargs):
     """
     logger.debug("from_objects(*{!r}, **{!r})".format(args, kwargs))
 
-    bqm_cls = BQM_CLASSES
+    bqm_cls = dimod.BinaryQuadraticModel
     sampleset_cls = dimod.SampleSet
     sampler_cls = (dimod.Sampler, dimod.ComposedSampler)
     response_cls = dwave.cloud.computation.Future

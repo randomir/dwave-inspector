@@ -18,13 +18,9 @@ import logging
 import operator
 import functools
 
+from importlib.metadata import EntryPoint, DistributionFinder, Distribution
 from typing import Sequence, Callable, Optional, Union, Dict, Any
 from urllib.parse import urlparse, ParseResult
-
-try:
-    from importlib.metadata import EntryPoint, DistributionFinder, Distribution
-except ImportError: # pragma: no cover
-    from importlib_metadata import EntryPoint, DistributionFinder, Distribution
 
 from flask.json.provider import JSONProvider
 import orjson

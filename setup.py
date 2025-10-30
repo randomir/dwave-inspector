@@ -12,8 +12,8 @@ with open(package_info_path, encoding='utf-8') as f:
 
 # Package requirements, minimal pinning
 install_requires = [
-    'dimod>=0.10.0',
-    'dwave-system>=1.3.0',
+    'dimod>=0.12.0',
+    'dwave-system>=1.18.0',
     'dwave-cloud-client>=0.13.0,<0.15.0',
     'Flask>=2.2,<4',
     'numpy',
@@ -24,9 +24,6 @@ install_requires = [
 # Package extras requirements
 extras_require = {
     'test': ['coverage>=7.0.0', 'vcrpy'],
-
-    # importlib.metadata backport needed for selectable entry point prior to py310
-    ':python_version < "3.10"': ['importlib-metadata>=4.8'],
 }
 
 classifiers = [
@@ -34,16 +31,16 @@ classifiers = [
     'Operating System :: OS Independent',
     'Development Status :: 3 - Alpha',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.9',
     'Programming Language :: Python :: 3.10',
     'Programming Language :: Python :: 3.11',
     'Programming Language :: Python :: 3.12',
     'Programming Language :: Python :: 3.13',
+    'Programming Language :: Python :: 3.14',
 ]
 
 packages = find_namespace_packages(include=['dwave.*'])
 
-python_requires = '>=3.9'
+python_requires = '>=3.10'
 
 setup(
     name=package_info['__package_name__'],

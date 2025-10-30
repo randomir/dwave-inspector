@@ -2,3 +2,5 @@
 upgrade:
   - |
     Drop support for Python 3.9.
+  - |
+    Drop support for ``dimod<0.12`` and ``dwave-system<1.18``.

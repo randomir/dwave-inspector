@@ -12,8 +12,8 @@ with open(package_info_path, encoding='utf-8') as f:
 
 # Package requirements, minimal pinning
 install_requires = [
-    'dimod>=0.10.0',
-    'dwave-system>=1.3.0',
+    'dimod>=0.12.0',
+    'dwave-system>=1.18.0',
     'dwave-cloud-client>=0.13.0,<0.15.0',
     'Flask>=2.2,<4',
     'numpy',

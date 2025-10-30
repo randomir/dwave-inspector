@@ -15,12 +15,7 @@
 import logging
 import operator
 import webbrowser
-
-try:
-    from importlib_metadata import entry_points
-except ImportError:  # noqa
-    # selectable entry points natively supported in py310+
-    from importlib.metadata import entry_points
+from importlib.metadata import entry_points
 
 from dwave.inspector.package_info import entry_point_group
 from dwave.inspector.utils import annotated, RichDisplayURL

@@ -6,8 +6,5 @@ dwave-cloud-client>=0.13.0,<0.15.0
 numpy    # comes with dimod, but be explicit
 orjson>=3.10.0
 
-# backports
-importlib-metadata>=4.8; python_version<"3.10"
-
 # dev requirements
 reno~=4.0
